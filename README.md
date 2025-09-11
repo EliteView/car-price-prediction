@@ -9,7 +9,7 @@ st.title("Car Price Prediction App")
 
 st.write("Enter the details of the car:")
 
-present_price = st.number_input("Present Price (in euros)", min_value=0.0, step=0.01)
+present_price = st.number_input("Present Price (in lakhs)", min_value=0.0, step=0.01)
 kms_driven = st.number_input("Kms Driven", min_value=0, step=1)
 fuel_type = st.selectbox("Fuel Type", ["Petrol", "Diesel", "CNG"])
 seller_type = st.selectbox("Seller Type", ["Dealer", "Individual"])
@@ -31,4 +31,4 @@ if st.button("Predict"):
         "Owner": [owner]
     })
     prediction = model.predict(input_df)[0]
-    st.success(f"Estimated Selling Price: £ {prediction:.2f} euros")
+    st.success(f"Estimated Selling Price: ₹ {prediction:.2f} lakhs")
